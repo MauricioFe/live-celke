@@ -1,5 +1,11 @@
+import Menu from '../components/Menu';
 function HomePage() {
-  return <div>Welcome to Celke</div>
+    return (
+        <div>
+            <Menu />
+            Home
+        </div>
+    );
 }
 
 export default HomePage

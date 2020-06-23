@@ -1,5 +1,11 @@
+import Menu from '../components/Menu';
 function Sobre() {
-    return <div>Sobre a Celke</div>
-  }
-  
-  export default Sobre
+    return (
+        <div>
+            <Menu />
+            Sobre a Celke
+        </div>
+    );
+}
+
+export default Sobre

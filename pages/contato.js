@@ -1,5 +1,11 @@
+import Menu from '../components/Menu';
 function Contato() {
-    return <div>Contato</div>
-  }
-  
-  export default Contato
+    return (
+        <div>
+            <Menu />
+            Contato
+        </div>
+    );
+}
+
+export default Contato
