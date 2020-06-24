@@ -1,26 +1,42 @@
-import Link from 'next/link';
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
 
+const Menu = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-const linkStyle = {
-    marginRight: 15
-}
+  const toggle = () => setIsOpen(!isOpen);
 
-const Menu = () => {
-    return (
-        <div>
-            <Link href="/">
-                <a style={linkStyle}>Home</a>
-            </Link>
-
-            <Link href="/sobre">
-                <a style={linkStyle}>Sobre</a>
-            </Link>
-
-            <Link href="/contato">
-                <a style={linkStyle}>Contato</a>
-            </Link>
-        </div>
-    );
+  return (
+    <div>
+      <Navbar color="dark" dark expand="md">
+        <NavbarBrand href="/">Home</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/sobre">Sobre</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/contato">Contato</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
+  );
 }
 
 export default Menu;
