@@ -14,9 +14,17 @@ function Home() {
             </Head>
             <Menu />
             <Jumbotron fluid className="servicos">
-                <Container>
-                    <h1 className=''>Serviços da Empresa</h1>
-                    <p>Temos a solução que a sua empresa precisa!</p>
+                <style>
+                    {`.servicos{
+                        padding:80px 0;
+                        background-color:#474e54;
+                        color:#fff;
+                        margin-bottom: 0rem !important;
+                    }`}
+                </style>
+                <Container className='text-center'>
+                    <h1 className='display-4'>Serviços da Empresa</h1>
+                    <p className='lead'>Temos a solução que a sua empresa precisa!</p>
                 </Container>
             </Jumbotron>
         </div>
