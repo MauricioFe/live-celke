@@ -7,14 +7,10 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+  Container
 } from 'reactstrap';
 
-const Menu = (props) => {
+const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -22,21 +18,29 @@ const Menu = (props) => {
   return (
     <div>
       <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">Home</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/sobre">Sobre</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="/contato">Contato</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
+        <Container>
+          <NavbarBrand href="/">Celke</NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
+                <NavLink href="/">Home</NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink href="/sobre">Sobre Empresa</NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink href="/contato">Contato</NavLink>
+              </NavItem>
+
+            </Nav>
+          </Collapse>
+        </Container>
       </Navbar>
     </div>
   );
 }
 
-export default Menu;
+export default Menu

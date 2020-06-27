@@ -1,15 +1,12 @@
-import dynamic from 'next/dynamic'
+import Menu from '../components/Menu';
 
-const Menu = dynamic(
-  () => import('../components/Menu'),
-  { ssr: false }
-)
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 function Sobre() {
     return (
         <div>
             <Menu />
-            Sobre a Celke
+            Sobre a Celke!
         </div>
     );
 }

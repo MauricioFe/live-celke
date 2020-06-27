@@ -1,20 +1,22 @@
+import React from 'react';
+import { Spinner } from 'reactstrap';
 
-import dynamic from 'next/dynamic'
+import Menu from '../components/Menu';
 
-const Menu = dynamic(
-  () => import('../components/Menu'),
-  { ssr: false }
-)
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function Contato() {
     return (
         <div>
             <Menu />
             Contato
+            
+
+            <div className="d-flex justify-content-center">
+                <Spinner color="dark" />
+            </div>
         </div>
     );
 }
 
-export default Contato
+export default Contato;

@@ -1,17 +1,26 @@
-import dynamic from 'next/dynamic'
+import Head from 'next/head';
+import Menu from '../components/Menu';
 
-const Menu = dynamic(
-  () => import('../components/Menu'),
-  { ssr: false }
-)
+import {Jumbotron, Container} from 'reactstrap'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-function HomePage() {
+function Home() {
     return (
         <div>
+            <Head>
+                <title>Home - Celke</title>
+                <meta name="description" content="Site de... Sobre ..."/>
+                <meta name="author" content="Maurício Lacerda"/>
+            </Head>
             <Menu />
-            Home
+            <Jumbotron fluid className="servicos">
+                <Container>
+                    <h1 className=''>Serviços da Empresa</h1>
+                    <p>Temos a solução que a sua empresa precisa!</p>
+                </Container>
+            </Jumbotron>
         </div>
     );
 }
 
-export default HomePage
+export default Home;
